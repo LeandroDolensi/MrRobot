@@ -1,21 +1,21 @@
 public class MrRobot {
 
-    int x1;
-    int y1;
-    int robotAngle;
-    int feixeValue;
-    int distance;
+    private int robotX1Position;
+    private int robotY1Position;
+    private int robotAngle;
+    private int feixeValue;
+    private int feixeDistance;
 
 
-    public void setRobotPosition(int x1, int y1, int robotAngle) {
-        this.x1 = x1;
-        this.y1 = y1;
+    public void setRobotPosition(int robotX1Position, int robotY1Position, int robotAngle) {
+        this.robotX1Position = robotX1Position;
+        this.robotY1Position = robotY1Position;
         this.robotAngle = robotAngle;
     }
 
-    public void setFeixe(int feixeValue, int distance) {
+    public void setFeixe(int feixeValue, int feixeDistance) {
         this.feixeValue = feixeValue;
-        this.distance = distance;
+        this.feixeDistance = feixeDistance;
     }
 
     public String getObstaclePosition() {
@@ -29,11 +29,11 @@ public class MrRobot {
     }
 
     private int getObstacleX1Position(){
-        return (int) Math.round(distance * Math.cos(getThetaPolarAngleInRadians()));
+        return (int) Math.round(feixeDistance * Math.cos(getThetaPolarAngleInRadians()));
     }
 
     private int getObstacleY1Position(){
-        return (int) Math.round(distance * Math.sin(getThetaPolarAngleInRadians()));
+        return (int) Math.round(feixeDistance * Math.sin(getThetaPolarAngleInRadians()));
     }
 
     private double getThetaPolarAngleInRadians(){
