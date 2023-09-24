@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a9d0ae8-3da5-41a2-8708-6cd09f89058f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MrRobot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MrRobotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MrRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MrRobot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MrRobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MrRobotTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +47,28 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MrRobotTest">
+    <configuration name="MrRobotTest" type="Application" factoryName="Application">
+      <module name="MrRobot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MrRobotTest" type="JUnit" factoryName="JUnit">
+      <module name="MrRobot" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MrRobotTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MrRobotTest" />
+      <item itemvalue="JUnit.MrRobotTest" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

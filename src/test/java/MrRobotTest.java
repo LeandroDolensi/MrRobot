@@ -18,6 +18,6 @@ public class MrRobotTest {
 
         String result = sut.getCollision();
 
-        assertThat(result).isEqualTo("(4, 0");
+        assertThat(result).isEqualTo("(4, 0)");
     }
 }
