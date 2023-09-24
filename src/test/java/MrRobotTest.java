@@ -50,10 +50,7 @@ public class MrRobotTest {
     void shouldReturnValidObstaclePositionWhenRobotIsRotationWhithoutSelfMoving(
             int feixeValue, int feixeDistance, int robotAngle, String expected
     ){
-        sut.setRobotPosition(0, 0, robotAngle);
-        sut.setFeixe(feixeValue, feixeDistance);
-
-        String result = sut.getObstaclePosition();
+        String result = buildAndGetResult(0, 0, robotAngle, feixeValue, feixeDistance);
 
         assertThat(result).isEqualTo(expected);
     }
@@ -95,10 +92,11 @@ public class MrRobotTest {
             int robotAngle,
             String expected
     ){
-        sut.setRobotPosition(robotX1Position, robotY1Position, robotAngle);
-        sut.setFeixe(feixeValue, feixeDistance);
-
-        String result = sut.getObstaclePosition();
+        String result = buildAndGetResult(robotX1Position,
+                                          robotY1Position,
+                                          robotAngle,
+                                          feixeValue,
+                                          feixeDistance);
 
         assertThat(result).isEqualTo(expected);
     }
@@ -118,14 +116,29 @@ public class MrRobotTest {
             int robotAngle,
             String expected
     ){
-        sut.setRobotPosition(robotX1Position, robotY1Position, robotAngle);
-        sut.setFeixe(feixeValue, feixeDistance);
-
-        String result = sut.getObstaclePosition();
+        String result = buildAndGetResult(robotX1Position,
+                                          robotY1Position,
+                                          robotAngle,
+                                          feixeValue,
+                                          feixeDistance);
 
         assertThat(result).isEqualTo(expected);
     }
 
+    private String buildAndGetResult(int robotX1Position,
+                                     int robotY1Position,
+                                     int robotAngle,
+                                     int feixeValue,
+                                     int feixeDistance){
 
+        sut.setRobotPosition(robotX1Position,
+                robotY1Position,
+                robotAngle,
+                feixeValue,
+                feixeDistance);
 
+        String result = sut.getObstaclePosition();
+
+        return result;
+    }
 }

@@ -7,16 +7,19 @@ public class MrRobot {
     private int feixeDistance;
 
 
-    public void setRobotPosition(int robotX1Position, int robotY1Position, int robotAngle) {
+    public void setRobotPosition(int robotX1Position,
+                                 int robotY1Position,
+                                 int robotAngle,
+                                 int feixeValue,
+                                 int feixeDistance) {
+
         this.robotX1Position = robotX1Position;
         this.robotY1Position = robotY1Position;
         this.robotAngle = robotAngle;
-    }
-
-    public void setFeixe(int feixeValue, int feixeDistance) {
         this.feixeValue = feixeValue;
         this.feixeDistance = feixeDistance;
     }
+
 
     public String getObstaclePosition() {
 
