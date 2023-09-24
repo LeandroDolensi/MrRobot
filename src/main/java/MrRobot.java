@@ -37,6 +37,9 @@ public class MrRobot {
     }
 
     private double getThetaPolarAngleInRadians(){
-        return Math.toRadians(90 - feixeValue);
+
+        int thetaPolarAngle = (90-feixeValue) + robotAngle;
+
+        return Math.toRadians(thetaPolarAngle);
     }
 }
