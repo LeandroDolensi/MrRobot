@@ -103,4 +103,29 @@ public class MrRobotTest {
         assertThat(result).isEqualTo(expected);
     }
 
+    /* estes são os casos testes dispostos no pdf como exemplos de resultados */
+    @ParameterizedTest
+    @CsvSource({"0, 0, 45, 5, 45, (0 5)",
+                "10, 10, 45, 10, 45, (10 20)",
+                "-4, 4, 135, 4, 45, (0 4)",
+                "0, 0, 135, 4, 0, (3 -3)"})
+    @DisplayName("should return valid obstacle position when robot move free")
+    void shouldReturnValidObstaclePositionWhenRobotMoveFree(
+            int robotX1Position,
+            int robotY1Position,
+            int feixeValue,
+            int feixeDistance,
+            int robotAngle,
+            String expected
+    ){
+        sut.setRobotPosition(robotX1Position, robotY1Position, robotAngle);
+        sut.setFeixe(feixeValue, feixeDistance);
+
+        String result = sut.getObstaclePosition();
+
+        assertThat(result).isEqualTo(expected);
+    }
+
+
+
 }
