@@ -16,7 +16,7 @@ public class MrRobotTest {
         sut.setRobotPosition(0, 0, 0);
         sut.setFeixe(90, 4);
 
-        String result = sut.getCollision();
+        String result = sut.getObstaclePosition();
 
         assertThat(result).isEqualTo("(4, 0)");
     }

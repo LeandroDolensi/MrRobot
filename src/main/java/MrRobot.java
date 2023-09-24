@@ -18,16 +18,25 @@ public class MrRobot {
         this.distance = distance;
     }
 
-    public String getCollision() {
+    public String getObstaclePosition() {
 
-        int angleTheta = 90 - feixeValue;
-        double angleThetaInRadians = Math.toRadians(angleTheta);
-
-        int obstacleX1 = (int) Math.round(distance * Math.cos(angleThetaInRadians));
-        int obstacleY1 = (int) Math.round(distance * Math.sin(angleThetaInRadians));
+        int obstacleX1 = getObstacleX1Position();
+        int obstacleY1 = getObstacleY1Position();
 
         String result = String.format("(%d, %d)", obstacleX1, obstacleY1);
 
         return result;
+    }
+
+    private int getObstacleX1Position(){
+        return (int) Math.round(distance * Math.cos(getThetaPolarAngleInRadians()));
+    }
+
+    private int getObstacleY1Position(){
+        return (int) Math.round(distance * Math.sin(getThetaPolarAngleInRadians()));
+    }
+
+    private double getThetaPolarAngleInRadians(){
+        return Math.toRadians(90 - feixeValue);
     }
 }
