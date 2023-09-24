@@ -23,7 +23,7 @@ public class MrRobot {
         int obstacleX1 = getObstacleX1Position();
         int obstacleY1 = getObstacleY1Position();
 
-        String result = String.format("(%d, %d)", obstacleX1, obstacleY1);
+        String result = String.format("(%d %d)", obstacleX1, obstacleY1);
 
         return result;
     }

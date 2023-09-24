@@ -1,23 +1,30 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MrRobotTest {
-    
-    
-    
-    @Test
-    @DisplayName("should return d value collision if a is zero and feixe is 90")
-    void shouldReturnDValueCollisionIfAIsZeroAndFeixeIs90(){
 
-        MrRobot sut = new MrRobot();
+    private static MrRobot sut;
 
+    @BeforeAll
+    static void buildRobot(){
+        sut = new MrRobot();
+    }
+    @ParameterizedTest
+    @CsvSource({"90, 4, (4 0)"})
+    @DisplayName("should return valid obstacle position when robot angle and position is zero")
+    void shouldReturnValidObstaclePositionWhenRobotAngleAndPositionIsZero(
+            int feixeValue, int feixeDistance, String expected
+    ){
         sut.setRobotPosition(0, 0, 0);
-        sut.setFeixe(90, 4);
+        sut.setFeixe(feixeValue, feixeDistance);
 
         String result = sut.getObstaclePosition();
 
-        assertThat(result).isEqualTo("(4, 0)");
+        assertThat(result).isEqualTo(expected);
     }
 }
