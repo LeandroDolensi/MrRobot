@@ -15,7 +15,11 @@ public class MrRobotTest {
         sut = new MrRobot();
     }
     @ParameterizedTest
-    @CsvSource({"90, 4, (4 0)"})
+    @CsvSource({"0, 4, (0 4)",
+                "45, 6, (4 4)",
+                "90, 4, (4 0)",
+                "135, 6, (4 -4)",
+                "180, 4, (0 -4)"})
     @DisplayName("should return valid obstacle position when robot angle and position is zero")
     void shouldReturnValidObstaclePositionWhenRobotAngleAndPositionIsZero(
             int feixeValue, int feixeDistance, String expected
@@ -27,4 +31,6 @@ public class MrRobotTest {
 
         assertThat(result).isEqualTo(expected);
     }
+
+    
 }
