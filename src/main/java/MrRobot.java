@@ -29,11 +29,11 @@ public class MrRobot {
     }
 
     private int getObstacleX1Position(){
-        return (int) Math.round(feixeDistance * Math.cos(getThetaPolarAngleInRadians()));
+        return (int) Math.round(feixeDistance * Math.cos(getThetaPolarAngleInRadians())) + robotX1Position;
     }
 
     private int getObstacleY1Position(){
-        return (int) Math.round(feixeDistance * Math.sin(getThetaPolarAngleInRadians()));
+        return (int) Math.round(feixeDistance * Math.sin(getThetaPolarAngleInRadians())) + robotY1Position;
     }
 
     private double getThetaPolarAngleInRadians(){
