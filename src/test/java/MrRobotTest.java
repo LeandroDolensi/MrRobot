@@ -58,4 +58,30 @@ public class MrRobotTest {
         assertThat(result).isEqualTo(expected);
     }
 
+    @ParameterizedTest
+    @CsvSource({"1, 1, 0, 4, 0, (1 5)",
+                "1, 1, 45, 6, 0, (5 5)",
+                "1, 1, 90, 4, 0, (5 1)",
+                "1, 1, 135, 6, 0, (5 -3)",
+                "1, 1, 180, 4, 0, (1 -3)",
+                "1, 1, 0, 6, 45, (-3 5)",
+                "1, 1, 45, 4, 45, (1 5)",
+                "1, 1, 90, 6, 45, (5 5)"})
+    @DisplayName("should return valid obstacle position when robot is rotation and movind around cartesian plan")
+    void shouldReturnValidObstaclePositionWhenRobotIsRotationAndMovingAroundCartesianPlan(
+            int robotX1Position,
+            int robotY1Position,
+            int feixeValue,
+            int feixeDistance,
+            int robotAngle,
+            String expected
+    ){
+        sut.setRobotPosition(robotX1Position, robotY1Position, robotAngle);
+        sut.setFeixe(feixeValue, feixeDistance);
+
+        String result = sut.getObstaclePosition();
+
+        assertThat(result).isEqualTo(expected);
+    }
+
 }
