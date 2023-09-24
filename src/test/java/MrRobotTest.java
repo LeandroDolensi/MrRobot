@@ -32,5 +32,21 @@ public class MrRobotTest {
         assertThat(result).isEqualTo(expected);
     }
 
-    
+    @ParameterizedTest
+    @CsvSource({"0, 6, (-4 4)",
+                "45, 4, (0 4)",
+                "90, 6, (4 4)",
+                "135, 4, (4 0)",
+                "180, 6, (4 -4)"})
+    @DisplayName("should return valid obstacle position when robot angle is 45 and position is zero")
+    void shouldReturnValidObstaclePositionWhenRobotAngleIs45AndPositionIsZero(
+            int feixeValue, int feixeDistance, String expected
+    ){
+        sut.setRobotPosition(0, 0, 45);
+        sut.setFeixe(feixeValue, feixeDistance);
+
+        String result = sut.getObstaclePosition();
+
+        assertThat(result).isEqualTo(expected);
+    }
 }
